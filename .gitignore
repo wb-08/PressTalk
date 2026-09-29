@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.idea/
+server/weights/
+server/audio_files/
+.venv/

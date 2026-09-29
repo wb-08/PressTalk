@@ -1,0 +1,21 @@
+services:
+  stt:
+    image: speech-to-text
+    container_name: speech-to-text
+    env_file: .env
+    ports:
+      - $WEBSERVER_PORT:$WEBSERVER_PORT
+    build:
+      context: ..
+      dockerfile: server/build_data/dockerfiles/stt
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    volumes:
+      - './weights/:/app/weights/'
+      - './audio_files/:/app/audio_files/'
