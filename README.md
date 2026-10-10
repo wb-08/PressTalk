@@ -54,6 +54,7 @@ Available `PRESS_KEY` values:
 ### Install
 
 ```bash
+brew install ffmpeg
 cd client
 ./install.sh
 ```
@@ -66,7 +67,7 @@ Both permissions must be granted to `/opt/homebrew/bin/uv` (or wherever `which u
 
 **Microphone** — macOS only adds apps after they request access. Run once manually to trigger the dialog:
 ```bash
-cd client && uv run client.py
+uv run client.py
 ```
 Click **OK**, then the entry appears in System Settings → Privacy & Security → Microphone.
 
